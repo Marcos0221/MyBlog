@@ -1,43 +1,22 @@
 package com.marcos.blog.controller;
 
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
- * @author: marcos
- * @createDate: 2022/12/25
+* IndexController
+* @author: marcos
+* @createDate: 2022/12/26
 */
-@RestController
-@RequestMapping("/api")
+@Controller
 public class IndexController {
 
-	@Value("${user.config.qq}")
-	private String qq;
-
-	@Value("${user.config.signature}")
-	private String signature;
-
-	@Value("${user.config.background_music}")
-	private String music;
-	
-	/** 获取 QQ 头像链接 */
-	@GetMapping("/getIcon")
-	public String getIcon(){
-		return String.format("https://q1.qlogo.cn/g?b=qq&nk=%s&s=640", qq);
-	}
-
-	/** 获取 QQ 个性签名 */
-	@GetMapping("/getSignature")
-	public String getSignature(){
-		return signature;
-	}
-
-	/** 获取背景音乐 */
-	@GetMapping("getMusic")
-	public String getMusic(){
-		return music;
+	/** 映射 index */
+	@RequestMapping("/")
+	public String index(Model model){
+		model.addAttribute("msg", "测试内容");
+		return "index";
 	}
 	
 }
