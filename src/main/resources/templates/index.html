@@ -1,16 +1,18 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>繁星的小窝</title>
-</head>
-<body>
-	
-	<p>内容</p>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title th:text="${title}"></title>
+		<link rel="stylesheet" href="/static/css/style.css">
+	</head>
+	<body>
 
-	<p th:text="${msg}"></p>
+		<img th:src="@{${icon}}" alt="marcos 的头像">
+		<p th:text="${name}" class="name">Marcos</p>
+		<p th:text="${signature}" class="signature">保持微笑，埋藏骄傲</p>
 
-</body>
+
+	</body>
 </html>

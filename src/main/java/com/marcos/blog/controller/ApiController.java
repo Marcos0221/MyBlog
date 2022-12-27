@@ -25,6 +25,9 @@ public class ApiController {
 	@Value("${website.title}")
 	private String title;
 
+	@Value("${user.config.name}")
+	private String name;
+
 	/** 获取 QQ 头像链接 */
 	@GetMapping("/getIcon")
 	public String getIcon(){
@@ -38,15 +41,21 @@ public class ApiController {
 	}
 
 	/** 获取背景音乐 */
-	@GetMapping("getMusic")
+	@GetMapping("/getMusic")
 	public String getMusic(){
 		return music;
 	}
 
 	/** 获取网站 title */
-	@GetMapping("getTitle")
+	@GetMapping("/getTitle")
 	public String getTitle(){
 		return title;
+	}
+
+	/** 获取 QQ 昵称 */
+	@GetMapping("/getName")
+	public String getName(){
+		return name;
 	}
 
 }
