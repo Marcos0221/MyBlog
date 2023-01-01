@@ -9,19 +9,14 @@ import java.util.Date;
 */
 public class Blog {
 
-	// 博客标题
-	private String blog_title;
+	private String title;
 
-	// 博客内容
-	private String blog_content;
+	private String content;
 
-	// 博客 发表/更新 时间
-	private Date blog_date;
+	private Date time;
 
-	// 博客标签
-	private String[] blog_tag;
+	private String[] tag;
 
-	// 博客访问次数
-	private int blog_times;	
+	private int[] category;
 
 }
